@@ -79,6 +79,7 @@ export class PrivateChannel {
      */
     protected hasMatchingHost(referer: any, host: any): boolean {
         return referer.hostname.substr(referer.hostname.indexOf('.')) === host ||
+            referer.hostname.substr(referer.hostname.indexOf('.')) + ':' + referer.port === host || 
             `${referer.protocol}//${referer.host}` === host ||
             referer.host === host;
     }
